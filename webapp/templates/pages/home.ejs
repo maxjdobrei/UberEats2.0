@@ -1,0 +1,219 @@
+<!-- AUTHOR: Max Dobrei -->
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<head id=head>
+		<title > Restaurant Ordering Page</title>
+		
+		<div id="header">
+			<% lnkArr.forEach(function(link){ %>
+			<a id= <%=link.id %>  href= <%=link.lnk %> >  <%=link.title %> </a>
+			<%}) %>
+		</div>
+
+
+			
+		<% if (!loggedin) { %>
+		
+			<style>
+				
+				body{
+					
+					background-color:beige;
+				}
+				#hID{
+					margin-left: 18%;
+				
+				}
+				#uID{
+					margin-left: 18%;
+					margin-right: 18%;
+				}
+				#nuID {
+					margin-right: 18%;
+				}
+				#topLayer {
+					
+					display: inline-block;	
+				}
+				#loginform{
+					display: inline-block;
+						margin-right: 0px;
+						margin-left: 475px;
+
+						border: 3px solid red;
+						padding: 30px 30px 30px 30px;
+
+						width: 450px;
+						height: 100px;
+
+						text-align: justify;
+						font-family: "Sans-serif", "Times New Roman", serif;
+						font-size: 100%;
+				}
+				#letitle{
+					margin: auto;
+					/* margin: 20px 0 20px 0 */
+					width: 300px;
+					padding: 20px;
+				}
+				#intromsg {
+		
+					display: inline-block;
+					margin-right: 0px;
+					margin-left: 475px;
+
+					border: 3px solid red;
+					padding: 30px 30px 30px 30px;
+
+					width: 450px;
+					height: 100px;
+
+					text-align: justify;
+					font-family: "Sans-serif", "Times New Roman", serif;
+					font-size: 100%;
+				}
+
+			</style>
+		<% } %>
+		<% if (loggedin) { %>
+				<style>
+				
+					body{
+						
+						background-color:beige;
+					}
+					#hID{
+						margin-left: 10%;
+					
+					}
+					#uID{
+						margin-left: 10%;
+						margin-right: 10%;
+					}
+					#oID {
+						margin-right: 10%;
+					}
+					
+					#ppID {
+						margin-right: 10%;
+					}
+					
+					#lgID {
+						margin-right: 10%;
+					}
+					
+					#topLayer {
+						
+						display: inline-block;	
+					}
+					#letitle{
+						margin: auto;
+						/* margin: 20px 0 20px 0 */
+						width: 300px;
+						padding: 20px;
+					}
+					#intromsg {
+			
+						display: inline-block;
+						margin-right: 0px;
+						margin-left: 475px;
+
+						border: 3px solid red;
+						padding: 30px 30px 30px 30px;
+
+						width: 450px;
+						height: 100px;
+
+						text-align: justify;
+						font-family: "Sans-serif", "Times New Roman", serif;
+						font-size: 100%;
+					}
+
+				</style>
+			<% } %>
+
+	</head>
+	
+
+	<% if (!loggedin) { %>
+
+
+	<body onload = "init()">
+		<div>
+			<h1 id="letitle">Hello There!</h1>
+		</div>
+
+		
+		
+		<!-- container for intro msg -->
+		<div id="topLayer">
+		
+			<p id= intromsg></p>
+			
+		</div>
+		
+		
+		
+		<br>
+		<br>
+		<div id="loginform">
+			
+			<% if (loggedin === false) { %>
+			
+				<form action="/login" method="post">
+					Username: <input type="text" name="username" required><br>
+					Password: <input type="password" name="password" required><br>
+					<button type="submit">Login</button>
+				</form>
+			<% } %>
+
+		</div>
+
+		<script src="../client.js"></script>
+
+	</body>
+	<%  } %>
+
+	<% if (loggedin) { %>
+
+
+	<body onload = "initWelcome()">
+		<div>
+			<h1 id="letitle">Hello There!</h1>
+		</div>
+
+		
+		
+		<!-- container for intro msg -->
+		<div id="topLayer">
+		
+			<p id= intromsg></p>
+			
+		</div>
+		
+		
+		
+		<br>
+		<br>
+		<div id="loginform">
+			
+			<% if (loggedin === false) { %>
+			
+				<form action="/login" method="post">
+					Username: <input type="text" name="username" required><br>
+					Password: <input type="password" name="password" required><br>
+					<button type="submit">Login</button>
+				</form>
+			<% } %>
+
+		</div>
+
+		<script src="../client.js"></script>
+
+	</body>
+	<%  } %>
+
+
+</html>

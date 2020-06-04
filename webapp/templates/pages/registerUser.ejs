@@ -1,0 +1,107 @@
+<!-- AUTHOR: Max Dobrei -->
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<head id=head>
+		<title > Restaurant Ordering Page</title>
+		
+		<div id="header">
+			<% lnkArr.forEach(function(link){ %>
+			<a id= <%=link.id %>  href= <%=link.lnk %> >  <%=link.title %> </a>
+			<%}) %>
+		</div>
+
+
+			<style>
+				
+				body{
+					
+					background-color:beige;
+				}
+				#hID{
+					margin-left: 18%;
+				
+				}
+				#uID{
+					margin-left: 18%;
+					margin-right: 18%;
+				}
+				#nuID {
+					margin-right: 18%;
+				}
+				#topLayer {
+					display: inline-block;
+					margin-right: 0px;
+					margin-left: 475px;
+
+					border: 3px solid red;
+					padding: 30px 30px 30px 30px;
+
+					width: 450px;
+					height: 100px;
+
+					font-family: "Sans-serif", "Times New Roman", serif;
+					font-size: 100%;
+				}
+				
+				#letitle{
+					margin: auto;
+					/* margin: 20px 0 20px 0 */
+					width: 300px;
+					padding: 20px;
+				}
+			
+
+			</style>
+		
+	</head>
+	
+	<% if (alert === false) { %>
+
+	<body>
+		<div>
+			<h1 id="letitle">Welcome to a new Beginning</h1>
+		</div>
+
+		<!-- container for intro msg -->
+		<div id="topLayer">
+				<form action="/newuser" method="post">
+					Please Enter A Username (has to be unique): <input type="text" name="username" required><br>
+					Please enter your Password (try not to forget it): <input type="password" name="password" required><br>
+					<button type="submit">Signup and Login</button>
+				</form>			
+		</div>
+		
+
+		
+
+	</body>
+
+	<% } %>
+
+	<% if (alert) { %>
+
+	<body onload= "newUserName()">
+		<div>
+			<h1 id="letitle">Hello There!</h1>
+		</div>
+
+		<!-- container for intro msg -->
+		<div id="topLayer">
+				<form action="/newuser" method="post">
+					Please Enter A Username (has to be unique): <input type="text" name="username" required><br>
+					Please enter your Password (try not to forget it): <input type="password" name="password" required><br>
+					<button type="submit">Login</button>
+				</form>			
+		</div>
+		
+
+		<script src="../client.js"></script>
+
+	</body>
+
+	<% } %>
+
+
+</html>

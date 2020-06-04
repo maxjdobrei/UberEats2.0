@@ -1,0 +1,240 @@
+<!-- AUTHOR: Max Dobrei -->
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<head id=head>
+		<title > User Directory Page</title>
+		
+		<div id="header">
+			<% lnkArr.forEach(function(link){ %>
+			<a id= <%=link.id %>  href= <%=link.lnk %> >  <%=link.title %> </a>
+			<%}) %>
+		</div>
+
+
+			<% if (!loggedin) { %>
+		
+			<style>
+				
+				#header{
+					margin-bottom: 150px;
+				}
+				body{
+					
+					background-color:beige;
+				}
+				#hID{
+					margin-left: 18%;
+					margin-bottom: 150px;
+				}
+				#uID{
+					margin-left: 18%;
+					margin-right: 18%;
+					margin-bottom: 150px;
+				}
+				#nuID {
+					margin-right: 18%;
+					margin-bottom: 150px;
+				}
+				#left {
+						
+						position: relative;
+						display: inline-block;
+						margin-right: 175px;
+
+						border: 3px solid red;
+						padding: 30px 30px 30px 30px;
+
+						width: 450px;
+						
+						font-family: "Sans-serif", "Times New Roman", serif;
+						font-size: 100%;	
+					}
+					
+					
+				#letitle{
+					margin: auto;
+					/* margin: 20px 0 20px 0 */
+					width: 300px;
+					padding: 20px;
+				}
+				
+			</style>
+		<% } %>
+		<% if (loggedin && ownprofile) { %>
+				<style>
+				
+					#header{
+					margin-bottom: 150px;
+				}
+
+					body{
+						
+						background-color:beige;
+					}
+					#hID{
+						margin-left: 10%;
+						margin-bottom: 150px;
+					
+					}
+					#uID{
+						margin-left: 10%;
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					#oID {
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					
+					#ppID {
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					
+					#lgID {
+						margin-right: 10%;
+					}
+					
+					#left {
+						
+						position: relative;
+						display: inline-block;
+						margin-right:  175px;
+
+						border: 3px solid red;
+						padding: 30px 30px 30px 30px;
+
+						width: 450px;
+						
+						font-family: "Sans-serif", "Times New Roman", serif;
+						font-size: 100%;	
+					}
+					
+					#right {
+						
+						position: relative;
+						display: inline-block;
+						margin-left:  175px;
+						border: 3px solid red;
+						padding: 30px 30px 30px 30px;
+
+						width: 450px;
+						
+						font-family: "Sans-serif", "Times New Roman", serif;
+						font-size: 100%;	
+					}
+					
+					#letitle{
+						margin: auto;
+						/* margin: 20px 0 20px 0 */
+						width: 300px;
+						padding: 20px;
+					}
+					
+
+				</style>
+			<% } %>
+
+			<% if (loggedin) { %>
+				<style>
+				
+					#header{
+						margin-bottom: 150px;
+					}
+					body{
+						
+						background-color:beige;
+					}
+					#hID{
+						margin-left: 10%;
+						margin-bottom: 150px;
+					
+					}
+					#uID{
+						margin-left: 10%;
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					#oID {
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					
+					#ppID {
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					
+					#lgID {
+						margin-right: 10%;
+					}
+					
+					#left {
+						
+						position: relative;
+						display: inline-block;
+						margin-right:  175px;
+
+						border: 3px solid red;
+						padding: 30px 30px 30px 30px;
+
+						width: 450px;
+						
+						font-family: "Sans-serif", "Times New Roman", serif;
+						font-size: 100%;	
+					}
+					
+					
+					#letitle{
+						margin: auto;
+						/* margin: 20px 0 20px 0 */
+						width: 300px;
+						padding: 20px;
+					}
+					
+
+				</style>
+			<% } %>
+
+
+
+	</head>
+	
+	
+
+	<body>
+		
+		<div id="left">
+			<p> Username: <%= username %> </p>
+			<br>
+			<br>
+			<h4>Order History: </h4>
+			<% orderArr.forEach(function(order){ %>
+			<a href= <%=order.lnk %> >  <%=order.id %> </a>
+			<br>
+			<%}) %>	
+		</div>
+
+		
+		<div id="right">
+			<% if (loggedin && ownprofile) { %>
+				<h4>If youd like to change your privacy settings please check the option below and click submit.</h4>
+				<br>
+				<form action="/users" method="POST">
+					<input type="radio"  name="privacy" value="public">
+					<label for="public">Public</label><br>
+					<input type="radio" name="privacy" value="private">
+					<label for="private">Private</label><br>
+					<input type="submit" value="Submit">
+				</form>
+			<% } %>
+			
+		</div>
+
+
+
+	
+	</body>
+</html>

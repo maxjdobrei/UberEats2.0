@@ -1,0 +1,152 @@
+<!-- AUTHOR: Max Dobrei -->
+<!DOCTYPE html>
+<html lang="en">
+
+	<head id=head>
+		<title > Order Page </title>
+		
+		<div id="header">
+			<% lnkArr.forEach(function(link){ %>
+			<a id= <%=link.id %>  href= <%=link.lnk %> >  <%=link.title %> </a>
+			<%}) %>
+		</div>
+
+			<% if (!loggedin) { %>
+		
+			<style>
+				
+				#header{
+					margin-bottom: 150px;
+				}
+				body{
+					
+					background-color:beige;
+				}
+				#hID{
+					margin-left: 18%;
+					margin-bottom: 150px;
+				}
+				#uID{
+					margin-left: 18%;
+					margin-right: 18%;
+					margin-bottom: 150px;
+				}
+				#nuID {
+					margin-right: 18%;
+					margin-bottom: 150px;
+				}
+				#topLayer {
+					display: inline-block;
+					margin-right: 0px;
+					margin-left: 475px;
+
+					border: 3px solid red;
+					padding: 30px 30px 30px 30px;
+
+					width: 450px;
+
+					font-family: "Sans-serif", "Times New Roman", serif;
+					font-size: 100%;
+				}
+					
+				#letitle{
+					margin: auto;
+					/* margin: 20px 0 20px 0 */
+					width: 300px;
+					padding: 20px;
+				}
+				
+			</style>
+		<% } %>
+	
+			<% if (loggedin) { %>
+				<style>
+				
+					#header{
+						margin-bottom: 150px;
+					}
+					body{
+						
+						background-color:beige;
+					}
+					#hID{
+						margin-left: 10%;
+						margin-bottom: 150px;
+					
+					}
+					#uID{
+						margin-left: 10%;
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					#oID {
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					
+					#ppID {
+						margin-right: 10%;
+						margin-bottom: 150px;
+					}
+					
+					#lgID {
+						margin-right: 10%;
+					}
+					
+					#topLayer {
+						display: inline-block;
+						margin-right: 0px;
+						margin-left: 475px;
+
+						border: 3px solid red;
+						padding: 30px 30px 30px 30px;
+
+						width: 450px;
+
+						font-family: "Sans-serif", "Times New Roman", serif;
+						font-size: 100%;
+				}
+					
+					
+					#letitle{
+						margin: auto;
+						/* margin: 20px 0 20px 0 */
+						width: 300px;
+						padding: 20px;
+					}
+					
+
+				</style>
+			<% } %>
+	</head>
+	
+	<body>
+		<div>
+			<h1 id="letitle">Order Summary</h1>
+		</div>
+
+		<div id="topLayer">
+			<p> Username of the person who ordered: <%= dbO.username %> </p>
+			<p> Restaurant name: <%= dbO.restaurant %> </p>
+			<br>
+			<br>
+			<h4>Order Contents: </h4>
+			<% dbO.order.forEach(function(str){ %>
+			<p>	<%=str %> </p>
+			<br>
+			<%}) %>	
+			<p>Subtotal: <%= dbO.subtotal %> </p>
+			<br>
+			<p>Delivery fee: <%= dbO.delivery %> </p>
+			<br>
+			<p>Tax: <%= dbO.tax %> </p>
+			<br>
+			<p>Total: <%= dbO.total %> </p>
+
+
+		</div>
+
+		
+
+	</body>
+</html>

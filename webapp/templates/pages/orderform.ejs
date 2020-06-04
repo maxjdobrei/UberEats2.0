@@ -1,0 +1,179 @@
+
+<!-- Max Dobrei-->
+
+
+<html>
+	<head>
+		<title>Order Form</title>
+		
+		<div id="header">
+			<% lnkArr.forEach(function(link){ %>
+			<a id= <%=link.id %>  href= <%=link.lnk %> >  <%=link.title %> </a>
+			<%}) %>
+		</div>
+		
+		<style>
+			body{
+				
+				background-color:beige;
+			}
+
+			#hID{
+				margin-left: 10%;
+			}
+			#uID{
+				margin-left: 10%;
+				margin-right: 10%;
+			}
+			#oID {
+				margin-right: 10%;
+			}
+					
+			#ppID {
+				margin-right: 10%;
+			}
+					
+			#lgID {
+				margin-right: 10%;
+			}
+
+			
+			#letitle{
+				margin: auto;
+				/* margin: 20px 0 20px 0 */
+				width: 300px;
+				padding: 20px;
+			}
+
+
+			#topLayer {
+				display: inline-block;
+				width: 1056px;
+				margin-left: 527px;
+
+			}
+
+			#restMenu {
+				display: inline-block;
+				width: 200px;
+				margin-left: 170px;
+			}
+
+			/*  CATEGORY LINKS */
+			#colOne {
+				
+				display: inline-block;
+				position: relative;
+				
+
+				width: 200px;
+
+				margin-left: 100px;
+				margin-right: 95px;
+				
+				border: 3px solid cyan;
+				padding: 10px 10px 10px 10px;
+			}
+
+			/* MENU INFO */
+			#colTwo {
+				display: inline-block;
+				
+				width: 500px;
+				margin-left: 100px; 
+				margin-right: 75px;
+
+				border: 3px solid cyan;
+				padding:  10px 10px 10px 10px;
+			}
+
+			/* ORDER SUMMARY  */
+			#colThree{
+				display: inline-block;
+				position: relative;
+				width: 350px;
+				margin-left: 20px; 
+		
+				border: 3px solid cyan;
+				padding:  10px 10px 10px 10px;
+			
+			}
+
+			#submitOrder{
+				position: relative;
+				float: right;
+				width: 350px;
+				
+				border: 3px solid cyan;
+				padding:  10px 10px 10px 10px;
+
+			}
+
+			#intromsg {
+				
+				display: inline-block;
+				margin-right: 0px;
+
+				border: 3px solid red;
+				padding: 30px 30px 30px 30px;
+
+				width: 450px;
+				height: 100px;
+
+				text-align: justify;
+				font-family: "Sans-serif", "Times New Roman", serif;
+				font-size: 100%;
+			}
+
+			#orderB 
+			{
+				margin-left: "1000px";
+			}
+		
+		</style>
+	</head>
+	
+	<body onload="init()">
+
+	
+		<!-- title -->
+		<div>
+			<h1 id="letitle">Hello There!</h1>
+		</div>
+
+
+		<!-- container for intro msg -->
+		<div id="topLayer">
+		
+			<p id= intromsg>Please select a restaurant! </p>
+			
+			
+			<!-- select menu  -->
+			<form id="restMenu">
+				<select>
+					
+				</select>
+			</form>
+			
+		</div>
+		
+		<br><br>
+		
+	
+		<div id="colOne"></div>
+		
+		<div  id="colTwo"></div>
+		
+		<div  id="colThree">
+			<button id="orderB" type="button"> Submit Order</button>	
+		</div>
+	
+		<!-- <div id="submitOrder">
+			<button id="orderB" type="button"> Submit Order</button>	
+		</div> -->
+	
+		<script src="../orderform.js"></script>
+	
+	</body>
+
+</html>

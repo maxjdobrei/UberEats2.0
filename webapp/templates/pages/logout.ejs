@@ -1,0 +1,81 @@
+<!-- AUTHOR: Max Dobrei -->
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<head id=head>
+		<title > Restaurant Ordering Page</title>
+		
+		<div id="header">
+			<% lnkArr.forEach(function(link){ %>
+			<a id= <%=link.id %>  href= <%=link.lnk %> >  <%=link.title %> </a>
+			<%}) %>
+		</div>
+
+			<style>
+				
+				body{
+					
+					background-color:beige;
+				}
+				#hID{
+					margin-left: 18%;
+				
+				}
+				#uID{
+					margin-left: 18%;
+					margin-right: 18%;
+				}
+				#nuID {
+					margin-right: 18%;
+				}
+				#topLayer {
+					
+					display: inline-block;	
+				}
+				
+				#letitle{
+					margin: auto;
+					/* margin: 20px 0 20px 0 */
+					width: 300px;
+					padding: 20px;
+				}
+				#intromsg {
+		
+					display: inline-block;
+					margin-right: 0px;
+					margin-left: 475px;
+
+					border: 3px solid red;
+					padding: 30px 30px 30px 30px;
+
+					width: 450px;
+					height: 100px;
+
+					text-align: justify;
+					font-family: "Sans-serif", "Times New Roman", serif;
+					font-size: 100%;
+				}
+
+			</style>
+		
+	</head>
+	
+	<body>
+		<div>
+			<h1 id="letitle">Logged out.</h1>
+		</div>
+
+		<!-- container for intro msg -->
+		<div id="topLayer">
+		
+			<p id= intromsg>Goodbye and visit again Soon^tm!</p>
+			
+		</div>
+		
+
+		
+
+	</body>
+
+</html>
