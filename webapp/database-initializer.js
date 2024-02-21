@@ -12,7 +12,7 @@ let db;
 //no ordering history is tied to them yet, easier to test manually then automate it
 
 //tried to have a little fun with it
-let userNames = ["winstoniscool", "lauraprada", "cooperzz69", "hoenheim1001", "elric02", "p123456", "mickjenkinsofficial", "snoopdogg", "charizard",  "password"];
+let userNames = ["winstoniscool", "laura", "cooperzz67", "hoenheim1001", "elric02", "p123456", "mickjenkinsofficial", "snoopdogg", "charizard",  "password"];
 let users = [];
 
 userNames.forEach(name =>{
