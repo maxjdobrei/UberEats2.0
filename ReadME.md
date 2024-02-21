@@ -4,20 +4,33 @@ A basic webpage that allows users to 'signup' with a password, visit other peopl
  
 Files that should be included:
 
-	-templates(folder) contains the several ejs files which will be used with the template engine to render
-	html pages back to the user. 
+	-templates(folder) 
 
-	-add.jpg and remove.jpg, both needed for the ordering page
+contains the several ejs files which will be used with the template engine to render
+html pages back to the user. 
 
-	-client.js, which will be sent to the browser and will interact with the server to dynamically alter webpages visited
+	-add.jpg and remove.jpg 
 
-	-server.js which will act as an HTTP server and handle all interactions with the browser and client.js
+both needed for the ordering page
 
-	-database-initializer.js which creates some data to facilitate testing the webpage.
+	-client.js, 
+which will be sent to the browser and will interact with the server to dynamically alter webpages visited
 
-	-orderform.js and orderform.ejs, separate js and template files for handling the ordering page
+	-server.js 
 
-	-package.json a file to facilitate the installation of all dependencies required to run server.js
+which will act as an HTTP server and handle all interactions with the browser and client.js
+
+	-database-initializer.js 
+
+which creates some data to facilitate testing the webpage.
+
+	-orderform.js and orderform.ejs, 
+ 
+separate js and template files for handling the ordering page
+
+	-package.json 
+
+a file to facilitate the installation of all dependencies required to run server.js
 	
 
 if you have npm installed, simply enter npm install when you are accessing the local directory from a terminal.	
@@ -26,11 +39,11 @@ To begin, you must be running the mongodb daemon in some form, associated with t
 or a folder of your choice, and connected to the default (localhost) url and default port.
 Once thats done, you can enter the local directory in a terminal, and enter
 
-node database-initializer.js 
+	node database-initializer.js 
 
 to populate the db with some user data to interact with.
 Alternatively you can skip that and just enter 
 
-node server.js
+	node server.js
 
 to run the server. To actually peruse the webpage itself, open the url 'localhost:3000' in any modern browser. 
